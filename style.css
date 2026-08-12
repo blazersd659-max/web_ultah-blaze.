@@ -1,0 +1,1102 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+
+/* =========================
+   BASIC
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background: #E929F8;
+    color: #57105f;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.floating-decoration {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+    font-size: 25px;
+    animation: floatDecoration 5s ease-in-out infinite;
+}
+
+.floating-decoration:nth-child(1) {
+    top: 15%;
+    left: 5%;
+}
+
+.floating-decoration:nth-child(2) {
+    top: 35%;
+    right: 6%;
+    animation-delay: 1s;
+}
+
+.floating-decoration:nth-child(3) {
+    top: 65%;
+    left: 8%;
+    animation-delay: 2s;
+}
+
+.floating-decoration:nth-child(4) {
+    top: 80%;
+    right: 8%;
+    animation-delay: 3s;
+}
+
+.floating-decoration:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    animation-delay: 1.5s;
+}
+
+
+@keyframes floatDecoration {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(10deg);
+    }
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ff9cf7 0 5%, transparent 6%),
+        radial-gradient(circle at 80% 30%, #c900db 0 7%, transparent 8%),
+        linear-gradient(
+            135deg,
+            #E929F8,
+            #ff4eea,
+            #c918e8
+        );
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+    padding: 30px;
+}
+
+
+.mini-text {
+    display: inline-block;
+
+    background: white;
+    color: #c31bd3;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 8px 0 #b719c4;
+}
+
+
+.hero h1 {
+    font-family: "Fredoka", sans-serif;
+
+    color: white;
+
+    font-size: clamp(65px, 12vw, 130px);
+
+    line-height: .85;
+
+    text-shadow:
+        5px 5px 0 #a711bb,
+        8px 8px 0 rgba(70, 0, 80, .15);
+
+    animation: titleBounce 3s ease-in-out infinite;
+}
+
+
+.hero h1 span {
+    color: #ffe4fc;
+}
+
+
+.hero p {
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    margin: 30px 0;
+}
+
+
+.main-button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #d41be5;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 0 #a712b7,
+        0 12px 20px rgba(100, 0, 100, .2);
+
+    transition: .2s;
+}
+
+
+.main-button:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+
+.main-button:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 3px 0 #a712b7;
+}
+
+
+@keyframes titleBounce {
+
+    0%, 100% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: rotate(1deg) translateY(-8px);
+    }
+}
+
+
+.cake {
+    position: absolute;
+
+    right: 8%;
+    bottom: 10%;
+
+    font-size: 130px;
+
+    animation: cakeFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes cakeFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(-2deg);
+    }
+}
+
+
+/* =========================
+   CLOUDS
+========================= */
+
+.cloud {
+    position: absolute;
+
+    width: 300px;
+    height: 100px;
+
+    background: #ffb7fa;
+
+    border-radius: 100px;
+
+    opacity: .7;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    background: inherit;
+
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 120px;
+    height: 120px;
+
+    top: -50px;
+    left: 50px;
+}
+
+.cloud::after {
+    width: 90px;
+    height: 90px;
+
+    top: -30px;
+    right: 40px;
+}
+
+.cloud1 {
+    bottom: -30px;
+    left: -50px;
+}
+
+.cloud2 {
+    bottom: 20px;
+    right: -100px;
+
+    transform: scale(.7);
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section {
+    position: relative;
+
+    padding: 110px 7%;
+
+    background: #ffe3fb;
+
+    overflow: hidden;
+}
+
+
+.section:nth-of-type(even) {
+    background: #fff0fd;
+}
+
+
+.section h2 {
+    font-family: "Fredoka", sans-serif;
+
+    color: #b914c9;
+
+    font-size: clamp(35px, 6vw, 60px);
+}
+
+
+.subtitle {
+    margin-top: 10px;
+
+    color: #8b438d;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.intro-text {
+    max-width: 700px;
+
+    margin-top: 30px;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #713575;
+}
+
+
+.intro-text strong {
+    color: #d11be4;
+}
+
+
+.sticker {
+    font-size: 80px;
+
+    animation: stickerFloat 3s infinite ease-in-out;
+}
+
+
+@keyframes stickerFloat {
+
+    0%, 100% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg) translateY(-10px);
+    }
+}
+
+
+.scroll-hint {
+    margin-top: 50px;
+
+    color: #c21bd1;
+
+    font-weight: bold;
+
+    animation: scrollHint 1.5s infinite;
+}
+
+
+@keyframes scrollHint {
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section {
+    background:
+        radial-gradient(#f4a9ed 2px, transparent 2px);
+
+    background-size: 25px 25px;
+}
+
+
+.gallery {
+    max-width: 1100px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.photo-card {
+    position: relative;
+
+    background: white;
+
+    padding: 12px;
+    padding-bottom: 25px;
+
+    box-shadow:
+        0 15px 30px rgba(125, 0, 130, .15);
+
+    transition: .3s;
+}
+
+
+.photo-card:hover {
+    transform:
+        rotate(0deg)
+        translateY(-10px)
+        scale(1.03);
+
+    z-index: 2;
+}
+
+
+.rotate-left {
+    transform: rotate(-3deg);
+}
+
+
+.rotate-right {
+    transform: rotate(3deg);
+}
+
+
+.photo-card img {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.photo-card p {
+    text-align: center;
+
+    font-family: "Fredoka", sans-serif;
+
+    margin-top: 15px;
+
+    color: #b81dc9;
+}
+
+
+.tape {
+    position: absolute;
+
+    width: 70px;
+    height: 22px;
+
+    background: #ff9eea;
+
+    top: -8px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-3deg);
+
+    opacity: .85;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-section {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.envelope {
+    font-size: 70px;
+
+    margin-bottom: -15px;
+
+    position: relative;
+    z-index: 2;
+
+    animation: envelopeFloat 2s infinite;
+}
+
+
+@keyframes envelopeFloat {
+
+    50% {
+        transform: translateY(-12px) rotate(4deg);
+    }
+}
+
+
+.message-card {
+    max-width: 850px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 20px 50px rgba(115, 0, 120, .15);
+
+    border: 4px solid #f3b4ee;
+}
+
+
+.message-header {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+
+.message-header h2 {
+    font-size: 35px;
+}
+
+
+.message {
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #633667;
+}
+
+
+.signature {
+    margin-top: 35px;
+
+    text-align: right;
+
+    color: #c01acf;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+.surprise-section {
+    text-align: center;
+
+    background: #fbdafa;
+}
+
+
+.gift {
+    font-size: 120px;
+
+    cursor: pointer;
+
+    animation:
+        giftBounce 2s infinite;
+
+    margin-bottom: 20px;
+}
+
+
+@keyframes giftBounce {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+
+.surprise-section h2 {
+    margin-bottom: 10px;
+}
+
+
+.surprise-message {
+    max-width: 500px;
+
+    margin: 40px auto 0;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    display: none;
+
+    box-shadow:
+        0 15px 40px rgba(120, 0, 130, .15);
+
+    animation: popIn .5s ease;
+}
+
+
+.surprise-message.show {
+    display: block;
+}
+
+
+.big-heart {
+    font-size: 70px;
+
+    animation: heartBeat 1s infinite;
+}
+
+
+.surprise-message h3 {
+    font-family: "Fredoka", sans-serif;
+
+    color: #bd1acb;
+
+    font-size: 28px;
+
+    margin: 15px 0;
+}
+
+
+@keyframes popIn {
+
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes heartBeat {
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================
+   WISH
+========================= */
+
+.wish-section {
+    text-align: center;
+}
+
+
+.wish-box {
+    position: relative;
+
+    max-width: 700px;
+
+    margin: 50px auto 0;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px rgba(120, 0, 130, .15);
+
+    text-align: left;
+}
+
+
+.wish-box label {
+    display: block;
+
+    font-family: "Fredoka", sans-serif;
+
+    color: #a917b9;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+textarea {
+    width: 100%;
+
+    height: 180px;
+
+    resize: none;
+
+    border: 3px solid #f2b0ed;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    outline: none;
+
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 16px;
+
+    color: #653467;
+
+    transition: .2s;
+}
+
+
+textarea:focus {
+    border-color: #df26ef;
+
+    box-shadow:
+        0 0 0 5px rgba(233, 41, 248, .1);
+}
+
+
+.character-count {
+    text-align: right;
+
+    margin: 5px 5px 20px;
+
+    font-size: 13px;
+
+    color: #9b6a9d;
+}
+
+
+.wish-box .main-button {
+    display: block;
+
+    margin: auto;
+}
+
+
+.wish-result {
+    max-width: 700px;
+
+    margin: 35px auto 0;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: #fff;
+
+    display: none;
+
+    animation: popIn .5s ease;
+}
+
+
+.wish-result.show {
+    display: block;
+}
+
+
+.result-icon {
+    font-size: 50px;
+}
+
+
+.wish-result h3 {
+    font-family: "Fredoka", sans-serif;
+
+    color: #ba1aca;
+
+    margin: 10px 0;
+}
+
+
+#wishText {
+    background: #fff0fd;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    margin: 15px 0;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-section {
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center, #ff73ef, #E929F8 60%, #c416d7);
+}
+
+
+.final-content {
+    position: relative;
+
+    z-index: 5;
+
+    color: white;
+
+    padding: 30px;
+}
+
+
+.final-star {
+    font-size: 50px;
+
+    animation: starSpin 4s linear infinite;
+}
+
+
+@keyframes starSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.final-section h2 {
+    color: white;
+
+    font-size: 35px;
+
+    margin-top: 20px;
+}
+
+
+.final-section h1 {
+    font-family: "Fredoka", sans-serif;
+
+    font-size: clamp(55px, 10vw, 100px);
+
+    line-height: 1;
+
+    color: white;
+
+    text-shadow:
+        5px 5px 0 #a510b7;
+}
+
+
+.final-section p {
+    max-width: 500px;
+
+    margin: 30px auto;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+.heart-button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #d11be4;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.heart-button:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   FLYING HEARTS
+========================= */
+
+.heart {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    animation: flyHeart 4s linear forwards;
+}
+
+
+@keyframes flyHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(720deg)
+            scale(1.5);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #a90eb9;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    .cake {
+        font-size: 80px;
+
+        right: 3%;
+        bottom: 5%;
+    }
+
+    .message-card {
+        padding: 25px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 80px 5%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photo-card {
+        padding: 8px;
+        padding-bottom: 15px;
+    }
+
+    .photo-card p {
+        font-size: 12px;
+    }
+
+    .message-header h2 {
+        font-size: 25px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+
+    .gift {
+        font-size: 90px;
+    }
+
+    .floating-decoration {
+        font-size: 18px;
+    }
+
+}
